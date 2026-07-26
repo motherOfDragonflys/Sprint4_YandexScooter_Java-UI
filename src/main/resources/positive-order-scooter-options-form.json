@@ -1,0 +1,16 @@
+[
+  {
+    "testName": "options_positive_1",
+    "deliveryDate": "12.12.2026",
+    "rentalPeriod": "сутки",
+    "colourId": "black",
+    "comment": "Хочу мчать быстрее ветра"
+  },
+  {
+    "testName": "options_positive_2",
+    "deliveryDate": "28.08.2026",
+    "rentalPeriod": "семеро суток",
+    "colourId": "grey",
+    "comment": "Ничего не хочу"
+  }
+]
