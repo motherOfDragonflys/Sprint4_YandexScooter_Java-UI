@@ -16,7 +16,7 @@ public class SearchIncorrectOrderNumberTest extends BaseTest {
     @Test
     public void shouldShowErrorWhenOrderNotFound () {
 
-        driver.get("https://qa-scooter.praktikum-services.ru");
+        driver.get(BASE_URL);
 
         SearchOrderPage page = new SearchOrderPage(driver);
 
@@ -28,8 +28,5 @@ public class SearchIncorrectOrderNumberTest extends BaseTest {
         //Если не появится искомая картинка, получим ошибку
         assertTrue(page.isOrderNotFoundMessageVisible());
 
-        System.out.println(
-                "[SUCCESS SearchIncorrectOrderNumberTest]: При вводе некорректного номера заказа появилась надпись 'Такого заказа не существует'"
-        );
     }
 }

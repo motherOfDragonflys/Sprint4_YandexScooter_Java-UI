@@ -14,6 +14,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseTest {
 
+    protected static final String BASE_URL = "https://qa-scooter.praktikum-services.ru";
+    protected static final String ORDER_URL = "https://qa-scooter.praktikum-services.ru/order";
+
     protected WebDriver driver;
 
     @Before

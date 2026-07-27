@@ -22,7 +22,7 @@ public class LogoTests extends BaseTest {
     @Test
     public void logoYandexClickMustReturnYandexHomePage () {
 
-        driver.get("https://qa-scooter.praktikum-services.ru");
+        driver.get(BASE_URL);
 
         HeaderLogoPage headerYandex = new HeaderLogoPage(driver);
 
@@ -31,7 +31,6 @@ public class LogoTests extends BaseTest {
         //Переход на открывшуюся вкладку
         String originalWindowHandle = headerYandex
                 .switchToNewTabAndReturnOriginalHandle();
-        System.out.println("Фактический заголовок страницы: " + driver.getTitle());
 
         //Ждем открытия вкладки с доменом ya.ru (спойлер: не дождемся)
         headerYandex.getWait()
@@ -61,21 +60,18 @@ public class LogoTests extends BaseTest {
         //Возвращаемся в исходное окно
         headerYandex.switchBackTo(originalWindowHandle);
 
-        //Если успех:
-        System.out.println("[SUCCESS LogoYandexTest]: Клик по лого Яндекс ведет на главную страницу Яндекса");
     }
 
     //Лого Самокат
     @Test
     public void logoScooterClickMustReturnScooterHomePage () {
 
-        driver.get("https://qa-scooter.praktikum-services.ru/order");
+        driver.get(ORDER_URL);
 
         HeaderLogoPage headerScooter = new HeaderLogoPage(driver);
 
         //Получаем Url до клика на заголовок
         String urlBeforeClick = driver.getCurrentUrl();
-        System.out.println("URL ДО клика: " + urlBeforeClick);
 
         headerScooter.clickLogoScooter();
 
@@ -85,14 +81,11 @@ public class LogoTests extends BaseTest {
 
         //Записываем новый Url
         String urlAfterClick = driver.getCurrentUrl();
-        System.out.println("URL ПОСЛЕ клика: " + urlAfterClick);
 
         //Получим ошибки, если не на главной странице
         assertThat(urlAfterClick, containsString("qa-scooter.praktikum-services.ru"));
         //Убедимся, что не попали на заказ с параметрами
         assertThat(urlAfterClick, not(containsString("/order?")));
 
-        //Если успех:
-        System.out.println("[SUCCESS LogoScooterTest]: Клик по лого Самокат ведет на главную страницу Самоката");
     }
 }

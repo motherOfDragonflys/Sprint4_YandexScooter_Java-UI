@@ -22,7 +22,7 @@ public class FaqTest extends BaseTest {
         Map<String, String> expectedPairs =
                 TestDataLoader.loadAndValidateFaqPairs("/faq-questions.json");
 
-        driver.get("https://qa-scooter.praktikum-services.ru");
+        driver.get(BASE_URL);
 
         FaqPage faq = new FaqPage(driver);
         //Закрыли баннер куки
@@ -34,10 +34,8 @@ public class FaqTest extends BaseTest {
         boolean success = (Boolean) validationResult.get("success");
         String report = (String) validationResult.get("report");
 
-        // Если валидация не прошла — тест падает с отчётом об ошибках
-        Assert.assertTrue("Валидация FAQ не пройдена:\n" + report, success);
+        // Если валидация не прошла
+        Assert.assertTrue(report, success);
 
-        //Если все этапы теста пройдены успешно:
-        System.out.println("[SUCCESS FaqTest]: Все вопросы найдены, ответы совпадают");
     }
 }
