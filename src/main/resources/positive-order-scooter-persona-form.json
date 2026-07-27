@@ -1,0 +1,18 @@
+[
+  {
+    "testName": "persona_positive_1",
+    "firstName": "Сергей",
+    "lastName": "Сергеев",
+    "address": "Хамовнически вал, 1",
+    "stationName": "Лужники",
+    "phone": "+79991111111"
+  },
+  {
+    "testName": "persona_positive_2",
+    "firstName": "Ян",
+    "lastName": "Янович",
+    "address": "Дмитровское шоссе, 124А",
+    "stationName": "Черкизовская",
+    "phone": "89991111111"
+  }
+]
